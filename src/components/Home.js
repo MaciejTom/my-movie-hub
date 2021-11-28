@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 //COMPONENTS
 import { HeroImage } from "./HeroImage";
+import Grid from "./Grid";
+import Thumb from "./Thumb";
 
 //HOOKS
 import { useHomeFetch } from "../hooks/useHomeFetch";
@@ -26,8 +28,8 @@ import {
 const Home = () => {
   const { movies, error, loading } = useHomeFetch();
 
-  const mostPopularFilm = movies.results[0]
-console.log(mostPopularFilm)
+  const mostPopularFilm = movies.results[0];
+
   return (
     <>
       {mostPopularFilm && (
@@ -37,6 +39,19 @@ console.log(mostPopularFilm)
           text={mostPopularFilm.overview}
         />
       )}
+      <Grid header="Popular Movies">
+        {movies.results.map((movie) => (
+          <Thumb
+            key={movie.id}
+            title={movie.title}
+            image={
+              movie.poster_path
+                ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                : noImage
+            }
+          />
+        ))}
+      </Grid>
     </>
   );
 };
