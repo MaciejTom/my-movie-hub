@@ -1,45 +1,43 @@
 import React, { useState, useEffect } from "react";
 
-//Image placeholder
+//COMPONENTS
+import { HeroImage } from "./HeroImage";
+
+//HOOKS
+import { useHomeFetch } from "../hooks/useHomeFetch";
+
+//IMAGE
 import noImage from "../images/no-image.jpg";
 
-import API from "./API.js";
+//API
+import {
+  SEARCH_BASE_URL,
+  POPULAR_BASE_URL,
+  API_URL,
+  API_KEY,
+  IMAGE_BASE_URL,
+  BACKDROP_SIZE,
+  POSTER_SIZE,
+  REQUEST_TOKEN_URL,
+  LOGIN_URL,
+  SESSION_ID_URL,
+} from "./config";
 
 const Home = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [movies, setMovies] = useState();
+  const { movies, error, loading } = useHomeFetch();
 
-  const fetchData = async (page, searchTerm = "") => {
-   
-    try {
-      setError(false);
-      setLoading(true);
-      const response = await API.fetchMovies(page, searchTerm);
-
-      setMovies((prev) => ({
-        ...response,
-        results:
-          page > 1
-            ? [...prev.results, ...response.results]
-            : [...response.results],
-      }));
-    } catch (error) {
-      setError(true);
-    }
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    fetchData(1);
-  }, []);
-
- 
-
+  const mostPopularFilm = movies.results[0]
+console.log(mostPopularFilm)
   return (
-    <div>
-      Home Page
-    </div>
+    <>
+      {mostPopularFilm && (
+        <HeroImage
+          title={mostPopularFilm.title}
+          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${mostPopularFilm.backdrop_path}`}
+          text={mostPopularFilm.overview}
+        />
+      )}
+    </>
   );
 };
 

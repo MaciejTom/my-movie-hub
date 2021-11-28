@@ -1,12 +1,7 @@
-import {
-  SEARCH_BASE_URL,
-  POPULAR_BASE_URL,
-  API_URL,
-  API_KEY,
-} from "./config.js";
+import { SEARCH_BASE_URL, POPULAR_BASE_URL } from "./config.js";
 
 const apiSettings = {
-  async fetchMovies(searchTerm, page) {
+  fetchMovies: async (searchTerm, page) => {
     const endpoint = searchTerm
       ? `${SEARCH_BASE_URL}${searchTerm}&page=${page}`
       : `${POPULAR_BASE_URL}&page=${page}`;
