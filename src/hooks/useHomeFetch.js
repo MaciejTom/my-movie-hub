@@ -11,6 +11,8 @@ const initialState = {
 };
 
 export const useHomeFetch = () => {
+
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [movies, setMovies] = useState(initialState);
@@ -20,7 +22,9 @@ export const useHomeFetch = () => {
     try {
       setError(false);
       setLoading(true);
+      console.log(searchTerm)
       const response = await API.fetchMovies(page, searchTerm);
+      console.log(response)
      
       setMovies((prev) => ({
         ...response,
@@ -36,9 +40,10 @@ export const useHomeFetch = () => {
   };
 
   useEffect(() => {
-    fetchData(1);
+    fetchData(1, searchTerm);
+    console.log("USE EFFECT")
    
-  }, []);
+  }, [searchTerm]);
 
-  return { movies, loading, error };
+  return { movies, loading, error, setSearchTerm, searchTerm };
 };
