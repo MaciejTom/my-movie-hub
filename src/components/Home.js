@@ -6,6 +6,7 @@ import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
+import Button from "./Button";
 
 //HOOKS
 import { useHomeFetch } from "../hooks/useHomeFetch";
@@ -28,34 +29,51 @@ import {
 } from "./config";
 
 const Home = () => {
-  const { movies, error, loading, setSearchTerm, searchTerm } = useHomeFetch();
+  const {
+    movies,
+    error,
+    loading,
+    setSearchTerm,
+    searchTerm,
+    callback,
+    setIsLoadingMore,
+  } = useHomeFetch();
 
   const mostPopularFilm = movies.results[0];
 
+  if (error) {
+    return <div>Something went wrong...</div>;
+  }
+
   return (
     <>
-      {(!searchTerm && mostPopularFilm) && (
+      {!searchTerm && mostPopularFilm && (
         <HeroImage
           title={mostPopularFilm.title}
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${mostPopularFilm.backdrop_path}`}
           text={mostPopularFilm.overview}
         />
       )}
-      <SearchBar setSearchTerm={setSearchTerm}/>
-      <Grid header={searchTerm ? 'Search Result' : `Popular Movies`}>
+      <SearchBar setSearchTerm={setSearchTerm} />
+      <Grid header={searchTerm ? "Search Result" : `Popular Movies`}>
         {movies.results.map((movie) => (
           <Thumb
             key={movie.id}
+            clickable
             title={movie.title}
             image={
               movie.poster_path
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : noImage
             }
+            movieID={movie.id}
           />
         ))}
       </Grid>
-      <Spinner/>
+      {loading && <Spinner />}
+      {movies.page < movies.total_pages && !loading && (
+        <Button text="Load More" callback={() => setIsLoadingMore(true)} />
+      )}
     </>
   );
 };

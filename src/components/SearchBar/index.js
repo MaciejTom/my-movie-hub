@@ -17,7 +17,7 @@ const SearchBar = ({ setSearchTerm }) => {
     //   return
     // }
     const timer = setTimeout(() => {
-      console.log("wpisane")
+    
       setSearchTerm(searchValue);
     }, 500)
 
