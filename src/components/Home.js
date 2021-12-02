@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 //COMPONENTS
-import { HeroImage } from "./HeroImage";
+import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";

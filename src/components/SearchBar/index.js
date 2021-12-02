@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 //STYLES
 import { Wrapper, Content } from "./SearchBar.styles";
@@ -12,10 +13,10 @@ const SearchBar = ({ setSearchTerm }) => {
 
   useEffect(() => {
 
-    // if (initial.current) {
-    //   initial.current = false;
-    //   return
-    // }
+    if (initial.current) {
+      initial.current = false;
+      return
+    }
     const timer = setTimeout(() => {
     
       setSearchTerm(searchValue);
@@ -41,6 +42,11 @@ const SearchBar = ({ setSearchTerm }) => {
       </Content>
     </Wrapper>
   );
+};
+
+SearchBar.propTypes = {
+  setSearchTerm: PropTypes.func,
+
 };
 
 export default SearchBar;
