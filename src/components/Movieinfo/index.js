@@ -16,7 +16,7 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 const Movieinfo = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
       <Content>
-    {console.log(`${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`)}
+   
 
         <Thumb
           image={

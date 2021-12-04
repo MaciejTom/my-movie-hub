@@ -11,7 +11,7 @@ export const Thumb = ({ image, movieID, clickable }) => {
   return (
    <div>
       {clickable ? (
-        <Link to={`/${movieID}`}>
+        <Link to={`/film/${movieID}`}>
        
           <Image src={image} alt="movie-thumb" />
         </Link>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 //COMPONENTS
 import HeroImage from "./HeroImage";
+import HeroSlider from "./HeroSlider";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";
@@ -35,24 +36,30 @@ const Home = () => {
     loading,
     setSearchTerm,
     searchTerm,
-    callback,
     setIsLoadingMore,
   } = useHomeFetch();
 
   const mostPopularFilm = movies.results[0];
 
+  const threeTopFilms = movies.results.slice(0, 3);
+
   if (error) {
     return <div>Something went wrong...</div>;
   }
+  console.log(threeTopFilms);
 
   return (
     <>
-      {!searchTerm && mostPopularFilm && (
+      {/* {!searchTerm && mostPopularFilm && (
         <HeroImage
           title={mostPopularFilm.title}
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${mostPopularFilm.backdrop_path}`}
           text={mostPopularFilm.overview}
         />
+      )} */}
+      {!searchTerm && mostPopularFilm && (
+        <HeroSlider threeTopFilms={threeTopFilms}
+        loading={loading} />
       )}
       <SearchBar setSearchTerm={setSearchTerm} />
       <Grid header={searchTerm ? "Search Result" : `Popular Movies`}>

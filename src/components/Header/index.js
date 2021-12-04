@@ -12,7 +12,7 @@ const Header = () => {
     <Wrapper>
       <Content>
         <Link to="/">
-          <LogoImg src={RMDBLogo} alt="rmdb-logo" />{" "}
+          <LogoImg src={RMDBLogo} alt="rmdb-logo" />
         </Link>
         <TMDBLogoImg src={TMDBLogo} alt="tmdb-logo" />
       </Content>

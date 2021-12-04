@@ -13,7 +13,7 @@ const initialState = {
 export const useHomeFetch = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [movies, setMovies] = useState(initialState);
   const [isLoadingMore, setIsLoadingMore] = useState(false);

@@ -16,6 +16,7 @@ const HeroImage = ({ image, text, title }) => {
     </Wrapper>
   );
 };
+
 HeroImage.propTypes = {
     image: PropTypes.string,
     text: PropTypes.string,

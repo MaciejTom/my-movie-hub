@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import {Wrapper, Image} from './Actor.styles'
 
 export const Actor = ({name, character, imageUrl}) => {
-    console.log(name);
+  
     return (
        <Wrapper>
           

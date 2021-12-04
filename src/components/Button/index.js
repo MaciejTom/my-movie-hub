@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 //STYLES
 import { Wrapper } from "./Button.styles";
 
-const Button = ({ text, callback }) => {
+const Button = ({ text, callback, size }) => {
   return (
-    <Wrapper type="button" onClick={callback}>
+    <Wrapper size={size} type="button" onClick={callback}>
       {text}
     </Wrapper>
   );
