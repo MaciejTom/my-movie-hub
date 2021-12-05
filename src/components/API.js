@@ -15,5 +15,9 @@ const apiSettings = {
     const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
   },
+  fetchVideo: async (movieId) => {
+    const videoEndpoint = `${API_URL}movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`;
+    return await (await fetch(videoEndpoint)).json();
+  },
 };
 export default apiSettings;

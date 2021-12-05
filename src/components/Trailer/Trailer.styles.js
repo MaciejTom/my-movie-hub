@@ -1,0 +1,60 @@
+import styled from "styled-components";
+
+export const Wrapper = styled.div`
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+
+  h1 {
+      padding-left: 20px;
+      color: var(--medGrey);
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+
+    button {
+      display: inline-block;
+      margin: 20px;
+    }
+  }
+`;
+export const Content = styled.div`
+  margin: 0 auto;
+  width: 80vw;
+  height: 450px;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  @media (max-width: 500px) {
+    height: 350px;
+  }
+
+  .film {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 1s;
+  }
+
+  .activeSlide {
+    transform: translate(0);
+    opacity: 1;
+  }
+  .nextSlide {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .lastSlide {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+`;
+
+export const Film = styled.div``;

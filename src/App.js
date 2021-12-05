@@ -10,6 +10,7 @@ import { GlobalStyles } from "./GlobalStyles";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Movie from "./components/Movie";
+import ActorPage from "./components/ActorPage";
 import NotFound from "./components/NotFound";
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/film/:movieId" element={<Movie/>}/>
+      <Route path="/actor/:actorId" element={<ActorPage/>}/>
       <Route path="/*" element={<NotFound/>}/>
          
       

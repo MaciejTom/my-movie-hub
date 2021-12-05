@@ -1,7 +1,7 @@
 import React from "react";
 
 //CONFIG
-import { IMAGE_BASE_URL, POSTER_SIZE } from "./config";
+import { IMAGE_BASE_URL, POSTER_SIZE, API_URL, API_KEY } from "./config";
 
 //COMPONENTS
 import Grid from "./Grid";
@@ -10,6 +10,7 @@ import BreadCrumb from "./BreadCrumb";
 import Movieinfo from "./Movieinfo";
 import MovieInfoBar from "./MovieInfoBar";
 import Actor from "./Actor";
+import Trailer from "./Trailer";
 
 //IMAGE
 import noImage from "../images/no-image.jpg";
@@ -25,9 +26,11 @@ const Movie = () => {
 
   const { movie, error, loading } = useMovieFetch(movieId);
 
+  
+
   if (loading) return <Spinner />;
   if (error) return <div>Something went wrong...</div>;
- 
+ console.log(movie.trailers)
   return (
     <>
       <BreadCrumb movieTitle={movie.title} />
@@ -37,10 +40,13 @@ const Movie = () => {
         budget={movie.budget}
         revenue={movie.revenue}
       />
+      {movie.trailers.length && <Trailer trailers={movie.trailers}/>}
+      
       <Grid header="Actors">
         {movie.actors.map((actor) => {
           return <Actor
             key={actor.credit_id}
+            id={actor.credit_id}
             name={actor.name}
             character={actor.character}
             imageUrl={
