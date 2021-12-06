@@ -19,5 +19,24 @@ const apiSettings = {
     const videoEndpoint = `${API_URL}movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`;
     return await (await fetch(videoEndpoint)).json();
   },
+  fetchActor: async (actorId) => {
+    const actorEndpoint = `${API_URL}person/${actorId}?api_key=${API_KEY}&language=en-US`;
+    // const actorEndpoint = `${API_URL}person/${actorId}?api_key=${API_KEY}&language=en-US`;
+    return await (await fetch(actorEndpoint)).json();
+  },
+  fetchActorMovies: async (actorId) => {
+    const actorEndpoint = `${API_URL}person/${actorId}/movie_credits?api_key=${API_KEY}&language=en-US`;
+ 
+    return await (await fetch(actorEndpoint)).json();
+  },
+  fetchActorImages: async (actorId) => {
+    const actorEndpoint = `${API_URL}person/${actorId}/images?api_key=${API_KEY}&language=en-US`;
+ 
+    return await (await fetch(actorEndpoint)).json();
+  },
 };
 export default apiSettings;
+
+// // `${API_URL}person/${actorId}?api_key=${API_KEY}&language=en-US`
+// // https://api.themoviedb.org/3/person/${actorId}?api_key=b7b239fc57b95047aaeec74f47f5ee93&language=en-US
+// https://api.themoviedb.org/3/person/569/movie_credits?api_key=b7b239fc57b95047aaeec74f47f5ee93&language=en-US`

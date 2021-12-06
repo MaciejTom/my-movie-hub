@@ -40,7 +40,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
         }
 
         return (
-          <Wrapper
+          <Wrapper key={film.id}
             image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${film.backdrop_path}`}
             position={position}
             opacity={opacity}

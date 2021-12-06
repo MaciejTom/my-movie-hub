@@ -26,11 +26,9 @@ const Movie = () => {
 
   const { movie, error, loading } = useMovieFetch(movieId);
 
-  
-
   if (loading) return <Spinner />;
   if (error) return <div>Something went wrong...</div>;
- console.log(movie.trailers)
+
   return (
     <>
       <BreadCrumb movieTitle={movie.title} />
@@ -40,21 +38,23 @@ const Movie = () => {
         budget={movie.budget}
         revenue={movie.revenue}
       />
-      {movie.trailers.length && <Trailer trailers={movie.trailers}/>}
-      
+      {movie.trailers.length && <Trailer trailers={movie.trailers} />}
+
       <Grid header="Actors">
         {movie.actors.map((actor) => {
-          return <Actor
-            key={actor.credit_id}
-            id={actor.credit_id}
-            name={actor.name}
-            character={actor.character}
-            imageUrl={
-              actor.profile_path
-                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
-                : noImage
-            }
-          />;
+          return (
+            <Actor
+              key={actor.id}
+              id={actor.id}
+              name={actor.name}
+              character={actor.character}
+              imageUrl={
+                actor.profile_path
+                  ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
+                  : noImage
+              }
+            />
+          );
         })}
       </Grid>
     </>

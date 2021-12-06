@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 
 import { Image } from "./Thumb.styles";
 
-export const Thumb = ({ image, movieID, clickable }) => {
- 
+export const Thumb = ({ image, movieID, clickable, actor }) => {
+  
     
   return (
    <div>
       {clickable ? (
         <Link to={`/film/${movieID}`}>
        
-          <Image src={image} alt="movie-thumb" />
+          <Image actor={actor} src={image} alt="movie-thumb" />
         </Link>
       ) : (
-        <Image src={image} alt="movie-thumb" />
+        <Image actor={actor} src={image} alt="movie-thumb" />
       )}
 
 </div>

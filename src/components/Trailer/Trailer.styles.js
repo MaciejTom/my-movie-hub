@@ -50,10 +50,12 @@ export const Content = styled.div`
   .nextSlide {
     transform: translateX(100%);
     opacity: 0;
+    pointer-events: none;
   }
   .lastSlide {
     transform: translateX(-100%);
     opacity: 0;
+    pointer-events: none;
   }
 `;
 

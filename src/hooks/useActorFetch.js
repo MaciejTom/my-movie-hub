@@ -1,61 +1,44 @@
 import { useState, useEffect } from "react";
 
-//API
 import API from "../components/API";
 
-const initialState = {
-  page: 0,
-  results: [],
-  total_pages: 0,
-  total_results: 0,
-};
-
-export const useHomeFetch = () => {
-
-  const [searchTerm, setSearchTerm] = useState("");
+const useActorFetch = (actorId) => {
+  const [actor, setActor] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [movies, setMovies] = useState(initialState);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-
-  const fetchData = async (page, searchTerm = "") => {
-  
-    try {
-      setError(false);
-      setLoading(true);
-    
-      const response = await API.fetchMovies(page, searchTerm);
+  useEffect(() => {
+    const fetchActor = async () => {
+      try {
+        setLoading(true);
+        setError(false);
+        const actorData = await API.fetchActor(actorId);
+        const actorMovies = await API.fetchActorMovies(actorId);
+        const actorImages = await API.fetchActorImages(actorId);
+        // const video = await API.fetchVideo(movieID)
+       
+        // const trailers = video.results.filter(el => el.type == "Trailer" && el.site == "YouTube");
+        // console.log(trailers)
+   
+        // const directors = credits.crew.filter((el) => el.job == "Director");
+console.log(actorData)
+        setActor({
+          ...actorData,
+           actorMovies,
+           actorImages,
+        
+          // actors: credits.cast,
+        });
+        setLoading(false);
+      } catch (e) {
+        setError(true);
+      }
       
-     
-      setMovies((prev) => ({
-        ...response,
-        results:
-          page > 1
-            ? [...prev.results, ...response.results]
-            : [...response.results],
-      }));
-    } catch (error) {
-      setError(true);
-    }
-    setLoading(false);
-  };
+    };
 
-  useEffect(() => {
-    setMovies(initialState)
-    fetchData(1, searchTerm);
-   
-   
-  }, [searchTerm]);
-
-  useEffect(() => {
-   if (!isLoadingMore) return;
-
-   fetchData(movies.page + 1, searchTerm)
-   setIsLoadingMore(false)
-   
-   
-  }, [isLoadingMore, searchTerm, movies.page]);
-
-  return { movies, loading, error, setSearchTerm, searchTerm, setIsLoadingMore };
+    fetchActor(actorId);
+  }, [actorId]);
+  return { actor, loading, error };
 };
+
+export default useActorFetch;
