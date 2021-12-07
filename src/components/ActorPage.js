@@ -9,6 +9,8 @@ import useActorFetch from '../hooks/useActorFetch';
 //COMPONENTS
 import ActorInfo from './ActorInfo';
 import Spinner from './Spinner';
+import ActorSlider from './ActorSlider';
+
 
 export const ActorPage = () => {
 
@@ -25,6 +27,7 @@ export const ActorPage = () => {
     return (
         <div>
             <ActorInfo actor={actor}/>
+            <ActorSlider actor={actor}/>
           
         </div>
     )
