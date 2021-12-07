@@ -4,7 +4,7 @@ import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
 
 export const Wrapper = styled.div`
   background: ${({ backdrop }) =>
-    backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : 'white'};
+    backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : "white"};
   background-size: cover;
   background-position: center;
   padding: 40px 20px;
@@ -26,6 +26,9 @@ export const Content = styled.div`
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
+   img {
+    margin: 0 auto;
+   }
 
   @media screen and (max-width: 768px) {
     display: block;

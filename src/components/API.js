@@ -30,7 +30,7 @@ const apiSettings = {
     return await (await fetch(actorEndpoint)).json();
   },
   fetchActorImages: async (actorId) => {
-    const actorEndpoint = `${API_URL}person/${actorId}/images?api_key=${API_KEY}&language=en-US`;
+    const actorEndpoint = `${API_URL}person/${actorId}/tagged_images?api_key=${API_KEY}&language=en-US`;
  
     return await (await fetch(actorEndpoint)).json();
   },

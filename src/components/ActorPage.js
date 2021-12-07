@@ -1,36 +1,34 @@
-import React from 'react'
+import React from "react";
 
 //REACT ROUTER
-import {useParams} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 //HOOK
-import useActorFetch from '../hooks/useActorFetch';
+import useActorFetch from "../hooks/useActorFetch";
 
 //COMPONENTS
-import ActorInfo from './ActorInfo';
-import Spinner from './Spinner';
-import ActorSlider from './ActorSlider';
-
+import ActorInfo from "./ActorInfo";
+import Spinner from "./Spinner";
+import ActorSlider from "./ActorSlider";
+import ActorFilms from "./ActorFilms";
 
 export const ActorPage = () => {
+  const { actorId } = useParams();
 
-    const {actorId} = useParams();
+  const { actor, error, loading } = useActorFetch(actorId);
 
-    const {actor, error, loading} = useActorFetch(actorId);
-
-  
-
-    if (loading) return <Spinner/>;
-    if (error) return <div>Something went wrong</div>;
-    
-
-    return (
-        <div>
-            <ActorInfo actor={actor}/>
-            <ActorSlider actor={actor}/>
-          
-        </div>
-    )
-}
+  if (loading) return <Spinner />;
+  if (error) return <div>Something went wrong</div>;
+  console.log(actor)
+  return (
+    <div>
+      <ActorInfo actor={actor} />
+      {actor.actorImages.results.length && (
+        <ActorSlider images={actor.actorImages.results} />
+      )}
+      <ActorFilms films={actor.actorMovies}/>
+    </div>
+  );
+};
 
 export default ActorPage;
