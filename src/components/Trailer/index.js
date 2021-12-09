@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import { Wrapper, Content, Film } from "./Trailer.styles";
+import { Wrapper, Content } from "./Trailer.styles";
 import Button from "../Button";
 
 function Trailer({ trailers }) {
@@ -35,7 +36,8 @@ function Trailer({ trailers }) {
 
           return (
             <iframe
-              class={`${position} film`}
+            key={trailer.id}
+              className={`${position} film`}
               width="560"
               height="315"
               src={`https://www.youtube.com/embed/${trailer.key}`}
@@ -48,7 +50,7 @@ function Trailer({ trailers }) {
         })}
       </Content>
       {trailers.length > 1 && (
-        <div class="buttons">
+        <div className="buttons">
           <Button
             text="Prev"
             size="small"
@@ -64,5 +66,9 @@ function Trailer({ trailers }) {
     </Wrapper>
   );
 }
+Trailer.propTypes = {
+  trailers: PropTypes.array,
+  
+};
 
 export default Trailer;

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 //REACT ROUTER
 import { useParams } from "react-router-dom";
 
@@ -26,7 +27,7 @@ export const ActorPage = () => {
       {actor.actorImages.results.length && (
         <ActorSlider images={actor.actorImages.results} />
       )}
-      <ActorFilms films={actor.actorMovies}/>
+      <ActorFilms films={actor.actorMovies.cast}/>
     </div>
   );
 };
