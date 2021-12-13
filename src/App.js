@@ -8,6 +8,7 @@ import { GlobalStyles } from "./GlobalStyles";
 
 //Components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Movie from "./components/Movie";
 import ActorPage from "./components/ActorPage";
@@ -26,7 +27,7 @@ const App = () => (
       
 
       </Routes>
-       
+       <Footer/>
      <GlobalStyles/>
     </Router>
    

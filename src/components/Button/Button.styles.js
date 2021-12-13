@@ -14,7 +14,7 @@ export const Wrapper = styled.button`
   transition: all 0.3s;
   outline: none;
   cursor: pointer;
-
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   :hover {
     opacity: 0.8;
   }
@@ -27,5 +27,6 @@ export const Wrapper = styled.button`
       : `font-size: var(--fontBig);
       width: 15%;
       min-width: 200px;
-      height: 60px;`}
+      height: 60px;
+     `}
 `;

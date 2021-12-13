@@ -15,16 +15,16 @@ export const Content = styled.div`
 `;
 
 export const LogoImg = styled.img`
-  width: 100px;
+  width: 120px;
 
-  @media (min-width: 500px) {
-    width: 200px;
+  @media (max-width: 500px) {
+    width: 80px;
   }
 `;
 
 export const TMDBLogoImg = styled.img`
- width:  80px;
+ width:  140px;
 
-@media (min-width: 500px) {
-  width: 100px;
+@media (max-width: 500px) {
+  width: 90px;
 }`;

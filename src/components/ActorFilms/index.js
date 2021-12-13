@@ -29,7 +29,12 @@ export const ActorFilms = ({ films }) => {
 
   return (
     <Wrapper>
+      
       <Content>
+      <div className="title">
+        <h2>Filmography</h2>
+      </div>
+      
         {currentFilms.map((film) => {
           return (
             <Film key={film.id}>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //STYLES
 import { Wrapper, Content } from "./BreadCrumb.styles";
 
-export const BreadCrumb = ({ movieTitle }) => {
+export const BreadCrumb = ({ title }) => {
   return (
     <Wrapper>
       <Content>
@@ -13,14 +13,14 @@ export const BreadCrumb = ({ movieTitle }) => {
           <span>Home</span>
         </Link>
         <span>|</span>
-        <span>{movieTitle}</span>
+        <span>{title}</span>
       </Content>
     </Wrapper>
   );
 };
 
 BreadCrumb.propTypes = {
-  movieTitle: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default BreadCrumb;

@@ -4,9 +4,8 @@ export const Wrapper = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
 
-  h1 {
-    padding-left: 20px;
-    color: var(--medGrey);
+  h2 {
+    font-size: var(--fontBigger);
   }
 
   .buttons {
@@ -33,47 +32,50 @@ export const Wrapper = styled.div`
     transform: scale(0);
     overflow: hidden;
     z-index: 999;
-    transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
+    transition: opacity 0.4s ease, visibility 0.4s ease,
+      transform 0.5s ease-in-out;
   }
   .modal.open {
-    visibility: visible; 
+    visibility: visible;
     opacity: 1;
     transform: scale(1);
   }
   .modal img {
-      width: auto;
-      max-height: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      padding: 20px;
-      margin: 0 auto;
-
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding: 20px;
+    margin: 0 auto;
   }
 `;
 export const Content = styled.div`
-  margin: 0 auto;
-  width: 80vw;
-  height: 450px;
+  margin: 4rem auto 0;
+
+  height: 460px;
   max-width: 800px;
   text-align: center;
   position: relative;
   display: flex;
   overflow: hidden;
-  @media (max-width: 350px) {
-    height: 350px;
-  }
 
   .imgDiv {
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s linear;
+    transition: var(--transition);
+    background: var(--darkGrey);
+    border-radius: 20px;
+    width: max-content;
+    padding: 5px;
     right: 0;
-    transition: 1s;
-    display: block;
+
+    margin: 0 auto;
   }
 
   .activeSlide {
@@ -90,12 +92,19 @@ export const Content = styled.div`
     opacity: 0;
     pointer-events: none;
   }
-  
+  a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  span {
+    color: var(--white);
+  }
 `;
 
 export const Image = styled.img`
-  height: 100%;
+  height: 430px;
   display: block;
-  text-align: center;
+  border-radius: 20px;
   margin: 0 auto;
 `;
+export const Poster = styled.div``;

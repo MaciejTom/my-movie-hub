@@ -16,12 +16,9 @@ export const Pagination = ({
 
   const changePagination = (type) => {
     if (type == "+" && currentPage !== pageNumbers.length) {
-      console.log(`${currentPage}...${pageNumbers.length}`);
-
       setCurrentPage((prev) => prev + 1);
     }
     if (type == "-" && currentPage > 1) {
-      console.log(`${currentPage}`);
       setCurrentPage((prev) => prev - 1);
     }
   };
@@ -32,27 +29,66 @@ export const Pagination = ({
       {pageNumbers.length < 5
         ? pageNumbers.map((number, index) => (
             <li key={index}>
-              <button onClick={() => setCurrentPage(number)}>{number}</button>
+              <button
+                className={`${number == currentPage && "current"}`}
+                onClick={() => setCurrentPage(number)}
+              >
+                {number}
+              </button>
             </li>
           ))
         : pageNumbers.map((number, index) => {
+            if (currentPage == 1 || currentPage == 2) {
+              if (number == 1 || number == 2 || number == pageNumbers.length) {
+                return (
+                  <li key={index}>
+                    <button
+                      className={`${number == currentPage && "current"}`}
+                      onClick={() => setCurrentPage(number)}
+                    >
+                      {number}
+                    </button>
+                  </li>
+                );
+              }
+            }
             if (
-              number == 1 ||
-              number == currentPage ||
-              number == currentPage + 1 ||
-              number == currentPage - 1 ||
-              number == pageNumbers.length
+              currentPage == pageNumbers.length ||
+              currentPage == pageNumbers.length - 1
             ) {
-              return (
-                <li key={index}>
-                  <button
-                    className={`${number == currentPage && "current"}`}
-                    onClick={() => setCurrentPage(number)}
-                  >
-                    {number}
-                  </button>
-                </li>
-              );
+              if (
+                number == 1 ||
+                number == pageNumbers.length - 1 ||
+                number == pageNumbers.length
+              ) {
+                return (
+                  <li key={index}>
+                    <button
+                      className={`${number == currentPage && "current"}`}
+                      onClick={() => setCurrentPage(number)}
+                    >
+                      {number}
+                    </button>
+                  </li>
+                );
+              }
+            } else {
+              if (
+                number == 1 ||
+                number == currentPage ||
+                number == pageNumbers.length
+              ) {
+                return (
+                  <li key={index}>
+                    <button
+                      className={`${number == currentPage && "current"}`}
+                      onClick={() => setCurrentPage(number)}
+                    >
+                      {number}
+                    </button>
+                  </li>
+                );
+              }
             }
           })}
 

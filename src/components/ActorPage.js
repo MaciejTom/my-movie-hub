@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import useActorFetch from "../hooks/useActorFetch";
 
 //COMPONENTS
+import BreadCrumb from "./BreadCrumb";
 import ActorInfo from "./ActorInfo";
 import Spinner from "./Spinner";
 import ActorSlider from "./ActorSlider";
@@ -23,8 +24,9 @@ export const ActorPage = () => {
   console.log(actor)
   return (
     <div>
+        <BreadCrumb title={actor.name} />
       <ActorInfo actor={actor} />
-      {actor.actorImages.results.length && (
+      {!!actor.actorImages.results.length && (
         <ActorSlider images={actor.actorImages.results} />
       )}
       <ActorFilms films={actor.actorMovies.cast}/>

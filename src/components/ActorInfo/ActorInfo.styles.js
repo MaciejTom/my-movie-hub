@@ -24,7 +24,7 @@ export const Content = styled.div`
   display: flex;
   max-width: var(--maxWidth);
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--darkGrey);
   border-radius: 20px;
    img {
     margin: 0 auto;
