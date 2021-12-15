@@ -20,7 +20,7 @@ function Trailer({ trailers }) {
   return (
     <Wrapper>
       <div className="title">
-        <h1>Trailer{trailers.length > 1 ? "s" : null}</h1>
+        <h2>Trailer{trailers.length > 1 ? "s" : null}</h2>
       </div>
       <Content>
         {trailers.map((trailer, trailerIndex) => {

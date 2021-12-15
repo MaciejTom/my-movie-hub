@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+
   max-width: var(--maxWidth);
   margin: 0 auto;
+  padding: 20px;
 
   h2 {
     font-size: var(--fontBigger);
@@ -51,7 +53,7 @@ export const Wrapper = styled.div`
   }
 `;
 export const Content = styled.div`
-  margin: 4rem auto 0;
+  margin: 1rem auto 0;
 
   height: 460px;
   max-width: 800px;
@@ -74,7 +76,7 @@ export const Content = styled.div`
     width: max-content;
     padding: 5px;
     right: 0;
-
+    cursor: pointer;
     margin: 0 auto;
   }
 

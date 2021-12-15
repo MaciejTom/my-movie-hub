@@ -15,11 +15,13 @@ export const GlobalStyles = createGlobalStyle`
 }
 * {
     box-sizing: border-box;
-    font-family: "Abel", sans-serif;
+    font-family: "Lato", sans-serif;
 }
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+   
     h1 {
         font-size: 2rem;
         font-weight: 600;
@@ -32,6 +34,6 @@ body {
     p {
         font-size: 1rem;
         color: var(--white);
+    }   
     }
-}
 `;

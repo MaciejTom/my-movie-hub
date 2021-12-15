@@ -29,7 +29,5 @@ export const List = styled.ul`
       margin: 3px;
     }
   }
-  .current {
-    background: grey;
   }
 `;

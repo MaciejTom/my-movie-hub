@@ -1,9 +1,9 @@
 import React from "react";
 
-//ROUTING
+//Routing
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-//STYLES
+//Styles
 import { GlobalStyles } from "./GlobalStyles";
 
 //Components
@@ -13,24 +13,22 @@ import Home from "./components/Home";
 import Movie from "./components/Movie";
 import ActorPage from "./components/ActorPage";
 import NotFound from "./components/NotFound";
+import ContainerContent from "./components/ContainerContent";
 
 const App = () => (
- 
-    <Router>
-       <Header />
+  <Router>
+    <ContainerContent>
+      <Header />
       <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/film/:movieId" element={<Movie/>}/>
-      <Route path="/actor/:actorId" element={<ActorPage/>}/>
-      <Route path="/*" element={<NotFound/>}/>
-         
-      
-
+        <Route path="/" element={<Home />} />
+        <Route path="/film/:movieId" element={<Movie />} />
+        <Route path="/actor/:actorId" element={<ActorPage />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
-       <Footer/>
-     <GlobalStyles/>
-    </Router>
-   
-  );
+    </ContainerContent>
+    <Footer />
+    <GlobalStyles />
+  </Router>
+);
 
 export default App;

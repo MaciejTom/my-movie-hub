@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-//STYLES
+
+//Styles
 import { Wrapper, Content } from "./Grid.style";
 
 const Grid = ({ header, children }) => {
   return (
     <Wrapper>
-      <h1>{header}</h1>
+      <h2>{header}</h2>
       <Content>{children}</Content>
     </Wrapper>
   );
@@ -15,7 +16,6 @@ const Grid = ({ header, children }) => {
 
 Grid.propTypes = {
   header: PropTypes.string,
-
 };
 
 export default Grid;

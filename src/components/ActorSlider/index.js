@@ -69,7 +69,7 @@ function ActorSlider({ images }) {
                   {img.media.title ? (
                     <Link to={`/film/${img.media.id}`}>{img.media.title}</Link>
                   ) : (
-                    <span>No title</span>
+                    <span>I'm sorry... we don't have this film</span>
                   )}
                 </div>
               </>
@@ -79,12 +79,12 @@ function ActorSlider({ images }) {
         {images.length > 1 && (
           <div className="buttons">
             <Button
-              text="<"
+              text="Prev"
               size="small"
               callback={() => setIndex(index - 1)}
             />
             <Button
-              text=">"
+              text="Next"
               size="small"
               callback={() => setIndex(index + 1)}
             />

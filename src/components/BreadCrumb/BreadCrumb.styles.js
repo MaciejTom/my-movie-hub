@@ -19,14 +19,12 @@ export const Content = styled.div`
   padding: 0 20px;
 
   span {
-   font-size: var(--fontSmall);
-   color: var(--white);
-   padding-right: 10px;
+    font-size: var(--fontMed);
+    color: var(--white);
+    padding-right: 10px;
 
-   @media (min-width: 768px) {
-     font-size: var(--fontMed);
-   }
+    @media (max-width: 768px) {
+      font-size: var(--fontSmall);
+    }
   }
-
- 
 `;

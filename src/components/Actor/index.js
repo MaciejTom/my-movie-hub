@@ -1,10 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
+//Proptypes
+import PropTypes from "prop-types";
+//Routing
+import { Link } from "react-router-dom";
+//Hooks
 import useActorFetch  from '../../hooks/useActorFetch'
- 
+//Styles 
 import { Wrapper, Image } from "./Actor.styles";
+
 
 export const Actor = ({ name, character, imageUrl, id }) => {
   const { actor } = useActorFetch(id);

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
+//Styles
 import { List } from "./Pagination.style";
+
+//Components
+import PaginationElement from "../PaginationElement";
 
 export const Pagination = ({
   totalFilms,
@@ -8,6 +12,19 @@ export const Pagination = ({
   setCurrentPage,
   currentPage,
 }) => {
+  const paginationElement = (number, index) => {
+    return (
+      <li key={index}>
+        <button
+          className={`${number == currentPage && "current"}`}
+          onClick={() => setCurrentPage(number)}
+        >
+          {number}
+        </button>
+      </li>
+    );
+  };
+
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalFilms / filmsPerPage); i++) {
@@ -28,28 +45,22 @@ export const Pagination = ({
       <button onClick={() => changePagination("-")}>{"<"}</button>
       {pageNumbers.length < 5
         ? pageNumbers.map((number, index) => (
-            <li key={index}>
-              <button
-                className={`${number == currentPage && "current"}`}
-                onClick={() => setCurrentPage(number)}
-              >
-                {number}
-              </button>
-            </li>
+            <PaginationElement
+              key={index}
+              number={number}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
           ))
         : pageNumbers.map((number, index) => {
             if (currentPage == 1 || currentPage == 2) {
               if (number == 1 || number == 2 || number == pageNumbers.length) {
-                return (
-                  <li key={index}>
-                    <button
-                      className={`${number == currentPage && "current"}`}
-                      onClick={() => setCurrentPage(number)}
-                    >
-                      {number}
-                    </button>
-                  </li>
-                );
+                return  <PaginationElement
+                key={index}
+                number={number}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />;
               }
             }
             if (
@@ -61,16 +72,12 @@ export const Pagination = ({
                 number == pageNumbers.length - 1 ||
                 number == pageNumbers.length
               ) {
-                return (
-                  <li key={index}>
-                    <button
-                      className={`${number == currentPage && "current"}`}
-                      onClick={() => setCurrentPage(number)}
-                    >
-                      {number}
-                    </button>
-                  </li>
-                );
+                return  <PaginationElement
+                key={index}
+                number={number}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />;
               }
             } else {
               if (
@@ -78,16 +85,12 @@ export const Pagination = ({
                 number == currentPage ||
                 number == pageNumbers.length
               ) {
-                return (
-                  <li key={index}>
-                    <button
-                      className={`${number == currentPage && "current"}`}
-                      onClick={() => setCurrentPage(number)}
-                    >
-                      {number}
-                    </button>
-                  </li>
-                );
+                return  <PaginationElement
+                key={index}
+                number={number}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />;
               }
             }
           })}

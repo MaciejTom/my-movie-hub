@@ -1,6 +1,5 @@
 import React from "react";
 
-
 //REACT ROUTER
 import { useParams } from "react-router-dom";
 
@@ -21,15 +20,15 @@ export const ActorPage = () => {
 
   if (loading) return <Spinner />;
   if (error) return <div>Something went wrong</div>;
-  console.log(actor)
+  console.log(actor);
   return (
     <div>
-        <BreadCrumb title={actor.name} />
+      <BreadCrumb title={actor.name} />
       <ActorInfo actor={actor} />
       {!!actor.actorImages.results.length && (
         <ActorSlider images={actor.actorImages.results} />
       )}
-      <ActorFilms films={actor.actorMovies.cast}/>
+      <ActorFilms films={actor.actorMovies.cast} />
     </div>
   );
 };

@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.button`
   display: block;
   background: var(--darkGrey);
-  width: 15%;
-  min-width: 200px;
-  height: 60px;
   border-radius: 30px;
   color: var(--white);
   border: 0;
@@ -21,12 +18,12 @@ export const Wrapper = styled.button`
   ${({ size }) =>
     size == "small"
       ? `font-size: var(--fontSmall);
-      width: 15%;
+      width: 45px;
       min-width: 130px;
       height: 45px;`
-      : `font-size: var(--fontBig);
-      width: 15%;
-      min-width: 200px;
-      height: 60px;
+      : `font-size: var(--fontMed);
+      width: 14%;
+      min-width: 150px;
+      height: 50px;
      `}
 `;
