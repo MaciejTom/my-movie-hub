@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
+//Proptypes
+import PropTypes from "prop-types";
+//Styles
 import { Wrapper, Content } from "./Trailer.styles";
+//Components
 import Button from "../Button";
 
 function Trailer({ trailers }) {
@@ -36,7 +39,7 @@ function Trailer({ trailers }) {
 
           return (
             <iframe
-            key={trailer.id}
+              key={trailer.id}
               className={`${position} film`}
               width="560"
               height="315"
@@ -68,7 +71,6 @@ function Trailer({ trailers }) {
 }
 Trailer.propTypes = {
   trailers: PropTypes.array,
-  
 };
 
 export default Trailer;

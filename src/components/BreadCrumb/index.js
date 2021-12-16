@@ -1,8 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
-//STYLES
+//Proptypes
+import PropTypes from "prop-types";
+//Routing
+import { Link } from "react-router-dom";
+//Styles
 import { Wrapper, Content } from "./BreadCrumb.styles";
 
 export const BreadCrumb = ({ title }) => {

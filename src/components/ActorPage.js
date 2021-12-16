@@ -1,12 +1,10 @@
 import React from "react";
 
-//REACT ROUTER
+//Routing
 import { useParams } from "react-router-dom";
-
-//HOOK
+//Hooks
 import useActorFetch from "../hooks/useActorFetch";
-
-//COMPONENTS
+//Components
 import BreadCrumb from "./BreadCrumb";
 import ActorInfo from "./ActorInfo";
 import Spinner from "./Spinner";
@@ -20,7 +18,7 @@ export const ActorPage = () => {
 
   if (loading) return <Spinner />;
   if (error) return <div>Something went wrong</div>;
-  console.log(actor);
+
   return (
     <div>
       <BreadCrumb title={actor.name} />

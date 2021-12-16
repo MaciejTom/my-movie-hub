@@ -1,9 +1,8 @@
 import React from "react";
 
-//CONFIG
+//Config
 import { IMAGE_BASE_URL, POSTER_SIZE, API_URL, API_KEY } from "./config";
-
-//COMPONENTS
+//Components
 import Grid from "./Grid";
 import Spinner from "./Spinner";
 import BreadCrumb from "./BreadCrumb";
@@ -11,14 +10,11 @@ import Movieinfo from "./Movieinfo";
 import MovieInfoBar from "./MovieInfoBar";
 import Actor from "./Actor";
 import Trailer from "./Trailer";
-
-//IMAGE
+//Images
 import noImage from "../images/no-image.jpg";
-
-//HOOK
+//Hook
 import useMovieFetch from "../hooks/useMovieFetch";
-
-//
+//Routing
 import { useParams } from "react-router";
 
 const Movie = () => {

@@ -32,7 +32,7 @@ export const ActorFilms = ({ films }) => {
             <Link to={`/film/${film.id}`}>
               <ImageDiv>
                 {film.backdrop_path && (
-                  <img
+                  <img alt="photo-from-the-film"
                     src={`${IMAGE_BASE_URL}${POSTER_SIZE}${film.backdrop_path}`}
                   />
                 )}

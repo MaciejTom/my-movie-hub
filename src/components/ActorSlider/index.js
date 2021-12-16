@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-//STYLES
-import { Wrapper, Content, Image, Poster } from "./ActorSlider.styles";
-
-//ROUTER
-import { Link } from "react-router-dom";
-
-//COFIG
-import { IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from "../config";
-
-//COMPONENTS
+//Proptypes
+import PropTypes from "prop-types";
+//Components
 import Button from "../Button";
+import { StyledModal } from "../Modal/Modal.styles";
+//Styles
+import { Wrapper, Content, Image } from "./ActorSlider.styles";
+//Routing
+import { Link } from "react-router-dom";
+//Config
+import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 
-function ActorSlider({ images }) {
+const ActorSlider = ({ images }) => {
   const [index, setIndex] = useState(0);
 
   const [imgState, setImgState] = useState({ modal: false, imageSrc: "" });
@@ -38,12 +38,8 @@ function ActorSlider({ images }) {
   return (
     <>
       <Wrapper>
-        <div
-          onClick={() => getImg("")}
-          className={imgState.modal ? `modal open` : `modal`}
-        >
-          <img src={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${imgState.imageSrc}`} />
-        </div>
+        <StyledModal getImg={getImg} imgState={imgState} />
+
         <div className="title">
           <h2>Image{images.length > 1 ? "s" : null}</h2>
         </div>
@@ -93,6 +89,10 @@ function ActorSlider({ images }) {
       </Wrapper>
     </>
   );
-}
+};
+
+ActorSlider.propTypes = {
+  images: PropTypes.array,
+};
 
 export default ActorSlider;

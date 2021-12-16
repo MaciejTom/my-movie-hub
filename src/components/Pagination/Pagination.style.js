@@ -8,7 +8,6 @@ export const List = styled.ul`
   button {
     display: block;
     background: var(--darkGrey);
-
     height: 60px;
     border-radius: 30px;
     color: var(--white);

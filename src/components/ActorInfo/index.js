@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-//COMPONENTS
+//Proptypes
+import PropTypes from "prop-types";
+//Components
 import Thumb from "../Thumb";
-
-//IMAGE
+//Images
 import NoImage from "../../images/no-image.jpg";
-
-//STYLES
+//Styles
 import { Wrapper, Content, Text } from "./ActorInfo.styles";
-
-//COFIG
+//Config
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 
 const ActorInfo = ({ actor }) => {
@@ -46,7 +45,8 @@ const ActorInfo = ({ actor }) => {
             <>
               <h4>Info</h4>
               <div>
-                Born: {actor.birthday} {actor.place_of_birth && `in ${actor.place_of_birth}`}
+                Born: {actor.birthday}{" "}
+                {actor.place_of_birth && `in ${actor.place_of_birth}`}
               </div>
 
               {actor.deathday && <div>Died: {actor.deathday}</div>}
@@ -56,6 +56,10 @@ const ActorInfo = ({ actor }) => {
       </Content>
     </Wrapper>
   );
+};
+
+ActorInfo.propTypes = {
+  actor: PropTypes.object,
 };
 
 export default ActorInfo;

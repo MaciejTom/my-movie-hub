@@ -1,9 +1,12 @@
 import React from "react";
-//ROUTING
 
+//Components
+import NotFoundComponent from '../components/NotFoundComponent'
 
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <NotFoundComponent/>
+  );
 };
 
 export default NotFound;

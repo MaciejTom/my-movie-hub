@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+//Api functions
 import API from "../components/API";
 
 const useMovieFetch = (movieID) => {
@@ -17,8 +18,7 @@ const useMovieFetch = (movieID) => {
         const video = await API.fetchVideo(movieID)
        
         const trailers = video.results.filter(el => el.type == "Trailer" && el.site == "YouTube");
-        console.log(trailers)
-   
+       
         const directors = credits.crew.filter((el) => el.job == "Director");
 
         setMovie({

@@ -1,5 +1,7 @@
 import React from "react";
 
+//Proptypes
+import PropTypes from "prop-types";
 //Styles
 import { Wrapper } from "./PaginationElement.styles";
 
@@ -14,6 +16,12 @@ const PaginationElement = ({ number, currentPage, setCurrentPage }) => {
       </button>
     </Wrapper>
   );
+};
+
+PaginationElement.propTypes = {
+  number: PropTypes.number,
+  currentPage: PropTypes.number,
+  setCurrentPage: PropTypes.func,
 };
 
 export default PaginationElement;

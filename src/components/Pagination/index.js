@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
+//Proptypes
+import PropTypes from "prop-types";
 //Styles
 import { List } from "./Pagination.style";
-
 //Components
 import PaginationElement from "../PaginationElement";
 
@@ -12,19 +13,6 @@ export const Pagination = ({
   setCurrentPage,
   currentPage,
 }) => {
-  const paginationElement = (number, index) => {
-    return (
-      <li key={index}>
-        <button
-          className={`${number == currentPage && "current"}`}
-          onClick={() => setCurrentPage(number)}
-        >
-          {number}
-        </button>
-      </li>
-    );
-  };
-
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalFilms / filmsPerPage); i++) {
@@ -55,12 +43,14 @@ export const Pagination = ({
         : pageNumbers.map((number, index) => {
             if (currentPage == 1 || currentPage == 2) {
               if (number == 1 || number == 2 || number == pageNumbers.length) {
-                return  <PaginationElement
-                key={index}
-                number={number}
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-              />;
+                return (
+                  <PaginationElement
+                    key={index}
+                    number={number}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                  />
+                );
               }
             }
             if (
@@ -72,12 +62,14 @@ export const Pagination = ({
                 number == pageNumbers.length - 1 ||
                 number == pageNumbers.length
               ) {
-                return  <PaginationElement
-                key={index}
-                number={number}
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-              />;
+                return (
+                  <PaginationElement
+                    key={index}
+                    number={number}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                  />
+                );
               }
             } else {
               if (
@@ -85,12 +77,14 @@ export const Pagination = ({
                 number == currentPage ||
                 number == pageNumbers.length
               ) {
-                return  <PaginationElement
-                key={index}
-                number={number}
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-              />;
+                return (
+                  <PaginationElement
+                    key={index}
+                    number={number}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                  />
+                );
               }
             }
           })}
@@ -98,4 +92,11 @@ export const Pagination = ({
       <button onClick={() => changePagination("+")}>{">"}</button>
     </List>
   );
+};
+
+Pagination.propTypes = {
+  totalFilms: PropTypes.number,
+  filmsPerPage: PropTypes.number,
+  setCurrentPage: PropTypes.func,
+  currentPage: PropTypes.number,
 };

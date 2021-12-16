@@ -6,13 +6,12 @@ const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en
 
 
 const IMAGE_BASE_URL = 'http://image.tmdb.org/t/p/';
-// Sizes: w300, w780, w1280, original
+
 const BACKDROP_SIZE = 'w1280';
-// w92, w154, w185, w342, w500, w780, original
+
 const POSTER_SIZE = 'w780';
 
 
 
 export { SEARCH_BASE_URL, POPULAR_BASE_URL, API_URL, API_KEY, BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE  };
 
-// https://api.themoviedb.org/3/movie/popular?api_key=b7b239fc57b95047aaeec74f47f5ee93&language=en-US&page=1

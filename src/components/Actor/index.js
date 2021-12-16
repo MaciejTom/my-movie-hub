@@ -10,7 +10,7 @@ import useActorFetch  from '../../hooks/useActorFetch'
 import { Wrapper, Image } from "./Actor.styles";
 
 
-export const Actor = ({ name, character, imageUrl, id }) => {
+const Actor = ({ name, character, imageUrl, id }) => {
   const { actor } = useActorFetch(id);
 
   return (

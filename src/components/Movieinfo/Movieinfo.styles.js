@@ -4,7 +4,7 @@ import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
 
 export const Wrapper = styled.div`
   background: ${({ backdrop }) =>
-    backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : '#000'};
+    backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : "#000"};
   background-size: cover;
   background-position: center;
   padding: 40px 20px;
@@ -39,12 +39,21 @@ export const Text = styled.div`
   color: var(--white);
   overflow: hidden;
 
-  .rating-directors {
-    display: flex;
-    justify-content: flex-start;
+  h2 {
+    font-size: var(--fontMed);
   }
 
-  .score {
+  h1 {
+    @media screen and (max-width: 768px) {
+      font-size: var(--fontBig);
+    }
+  }
+`;
+export const Rating = styled.div`
+  display: flex;
+  justify-content: flex-start;
+
+  h3 + div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,18 +65,12 @@ export const Text = styled.div`
     border-radius: 50%;
     margin: 0;
   }
+`;
 
-  .director {
-    margin: 0 0 0 40px;
+export const Directors = styled.div`
+  margin: 0 0 0 40px;
 
-    p {
-      margin: 0;
-    }
-  }
-
-  h1 {
-    @media screen and (max-width: 768px) {
-      font-size: var(--fontBig);
-    }
+  p {
+    margin: 0;
   }
 `;

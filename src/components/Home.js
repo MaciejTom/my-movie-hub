@@ -1,33 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-//COMPONENTS
-
+//Components
 import HeroSlider from "./HeroSlider";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
-
-//HOOKS
-import { useHomeFetch } from "../hooks/useHomeFetch";
-
-//IMAGE
+//Hooks
+import useHomeFetch from "../hooks/useHomeFetch";
+//Images
 import noImage from "../images/no-image.jpg";
-
-//API
-import {
-  SEARCH_BASE_URL,
-  POPULAR_BASE_URL,
-  API_URL,
-  API_KEY,
-  IMAGE_BASE_URL,
-  BACKDROP_SIZE,
-  POSTER_SIZE,
-  REQUEST_TOKEN_URL,
-  LOGIN_URL,
-  SESSION_ID_URL,
-} from "./config";
+//Config
+import { IMAGE_BASE_URL, POSTER_SIZE } from "./config";
 
 const Home = () => {
   const {
@@ -46,20 +31,16 @@ const Home = () => {
   if (error) {
     return <div>Something went wrong...</div>;
   }
-  console.log(threeTopFilms);
 
   return (
     <>
-   
       {!searchTerm && mostPopularFilm && (
-        <HeroSlider threeTopFilms={threeTopFilms}
-        loading={loading} />
+        <HeroSlider threeTopFilms={threeTopFilms} loading={loading} />
       )}
       <SearchBar setSearchTerm={setSearchTerm} />
       <Grid header={searchTerm ? "Search Result" : `Popular Movies`}>
         {movies.results.map((movie) => (
           <Thumb
-          
             key={movie.id}
             clickable
             title={movie.title}

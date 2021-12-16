@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-//API
+//Api functions
 import API from "../components/API";
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
   total_results: 0,
 };
 
-export const useHomeFetch = () => {
+const useHomeFetch = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
@@ -59,3 +59,5 @@ export const useHomeFetch = () => {
 
   return { movies, loading, error, setSearchTerm, searchTerm, setIsLoadingMore };
 };
+
+export default useHomeFetch;

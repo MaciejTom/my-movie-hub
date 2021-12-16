@@ -1,10 +1,11 @@
 import React from "react";
 
+//Routing
 import { Link } from "react-router-dom";
-
+//Images
 import TMDBLogo from "../../images/tmdb_logo.svg";
 import MMHLogo from "../../images/mymoviehub.jpg";
-
+//Styles
 import { Wrapper, Content, LogoImg, TMDBLogoImg } from "./Header.styles";
 
 const Header = () => {

@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from "react";
 
+//Proptypes
+import PropTypes from "prop-types";
+//Routing
 import { Link } from "react-router-dom";
-
+//Styles
 import { Wrapper, Content, Section, Text } from "./HeroSlider.styles";
-
+//Config
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
-
+//Components
 import Button from "../Button";
 
 export const HeroSlider = ({ threeTopFilms, loading }) => {
   const [index, setIndex] = useState(1);
 
-    useEffect(() => {
-      const sliderTimer = setInterval(() => {
-        if (index >= threeTopFilms.length - 1) {
-          setIndex(-1);
-        }
-        setIndex((prev) => prev + 1);
-      }, 8000);
-      return () => clearInterval(sliderTimer);
-    }, [index]);
+  useEffect(() => {
+    const sliderTimer = setInterval(() => {
+      if (index >= threeTopFilms.length - 1) {
+        setIndex(-1);
+      }
+      setIndex((prev) => prev + 1);
+    }, 8000);
+    return () => clearInterval(sliderTimer);
+  }, [index]);
 
-  if (loading) {return <div>loading...</div>}
+  if (loading) {
+    return <div>loading...</div>;
+  }
   return (
     <Section>
       {threeTopFilms.map((film, filmIndex) => {
@@ -40,7 +45,8 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
         }
 
         return (
-          <Wrapper key={film.id}
+          <Wrapper
+            key={film.id}
             image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${film.backdrop_path}`}
             position={position}
             opacity={opacity}
@@ -50,7 +56,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
                 <h1>{film.title}</h1>
                 <p>{film.overview}</p>
                 <Link to={`/film/${film.id}`}>
-                  <Button size='small' text='Read more'/>
+                  <Button size="small" text="Read more" />
                 </Link>
               </Text>
             </Content>
@@ -59,6 +65,11 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
       })}
     </Section>
   );
+};
+
+HeroSlider.propTypes = {
+  threeTopFilms: PropTypes.array,
+  loading: PropTypes.bool,
 };
 
 export default HeroSlider;

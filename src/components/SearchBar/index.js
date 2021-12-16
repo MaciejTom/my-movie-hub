@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+
+//Proptypes
 import PropTypes from "prop-types";
-
-//STYLES
+//Styles
 import { Wrapper, Content } from "./SearchBar.styles";
-
+//Images
 import searchIcon from "../../images/search-icon.svg";
 
 const SearchBar = ({ setSearchTerm }) => {

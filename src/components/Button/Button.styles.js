@@ -22,8 +22,8 @@ export const Wrapper = styled.button`
       min-width: 130px;
       height: 45px;`
       : `font-size: var(--fontMed);
-      width: 14%;
+      width: 15%;
       min-width: 150px;
-      height: 50px;
+      height: 60px;
      `}
 `;
