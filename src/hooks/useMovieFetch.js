@@ -17,9 +17,9 @@ const useMovieFetch = (movieID) => {
         const credits = await API.fetchCredits(movieID);
         const video = await API.fetchVideo(movieID)
        
-        const trailers = video.results.filter(el => el.type == "Trailer" && el.site == "YouTube");
+        const trailers = video.results.filter(el => el.type === "Trailer" && el.site === "YouTube");
        
-        const directors = credits.crew.filter((el) => el.job == "Director");
+        const directors = credits.crew.filter((el) => el.job === "Director");
 
         setMovie({
           ...movieData,

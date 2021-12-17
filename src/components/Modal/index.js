@@ -12,7 +12,7 @@ const Modal = ({ className, getImg, imgState }) => {
         onClick={() => getImg("")}
         className={imgState.modal ? `modal open` : `modal`}
       >
-        <img src={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${imgState.imageSrc}`} />
+        <img src={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${imgState.imageSrc}`} alt="full-image"/>
       </div>
     </div>
   );

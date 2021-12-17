@@ -56,19 +56,17 @@ const ActorSlider = ({ images }) => {
             }
 
             return (
-              <>
-                <div key={img.id} className={`${position} imgDiv`}>
-                  <Image
-                    src={`${IMAGE_BASE_URL}${POSTER_SIZE}${img.file_path}`}
-                    onClick={() => getImg(img)}
-                  />
-                  {img.media.title ? (
-                    <Link to={`/film/${img.media.id}`}>{img.media.title}</Link>
-                  ) : (
-                    <span>I'm sorry... we don't have this film</span>
-                  )}
-                </div>
-              </>
+              <div key={img.id} className={`${position} imgDiv`}>
+                <Image
+                  src={`${IMAGE_BASE_URL}${POSTER_SIZE}${img.file_path}`}
+                  onClick={() => getImg(img)}
+                />
+                {img.media.title ? (
+                  <Link to={`/film/${img.media.id}`}>{img.media.title}</Link>
+                ) : (
+                  <span>I'm sorry... we don't have this film</span>
+                )}
+              </div>
             );
           })}
         </Content>

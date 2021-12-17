@@ -9,7 +9,7 @@ const PaginationElement = ({ number, currentPage, setCurrentPage }) => {
   return (
     <Wrapper>
       <button
-        className={`${number == currentPage && "current"}`}
+        className={`${number === currentPage && "current"}`}
         onClick={() => setCurrentPage(number)}
       >
         {number}

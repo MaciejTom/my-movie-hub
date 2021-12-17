@@ -20,10 +20,10 @@ export const Pagination = ({
   }
 
   const changePagination = (type) => {
-    if (type == "+" && currentPage !== pageNumbers.length) {
+    if (type === "+" && currentPage !== pageNumbers.length) {
       setCurrentPage((prev) => prev + 1);
     }
-    if (type == "-" && currentPage > 1) {
+    if (type === "-" && currentPage > 1) {
       setCurrentPage((prev) => prev - 1);
     }
   };
@@ -41,8 +41,8 @@ export const Pagination = ({
             />
           ))
         : pageNumbers.map((number, index) => {
-            if (currentPage == 1 || currentPage == 2) {
-              if (number == 1 || number == 2 || number == pageNumbers.length) {
+            if (currentPage === 1 || currentPage === 2) {
+              if (number === 1 || number === 2 || number === pageNumbers.length) {
                 return (
                   <PaginationElement
                     key={index}
@@ -54,13 +54,13 @@ export const Pagination = ({
               }
             }
             if (
-              currentPage == pageNumbers.length ||
-              currentPage == pageNumbers.length - 1
+              currentPage === pageNumbers.length ||
+              currentPage === pageNumbers.length - 1
             ) {
               if (
-                number == 1 ||
-                number == pageNumbers.length - 1 ||
-                number == pageNumbers.length
+                number === 1 ||
+                number === pageNumbers.length - 1 ||
+                number === pageNumbers.length
               ) {
                 return (
                   <PaginationElement
@@ -73,9 +73,9 @@ export const Pagination = ({
               }
             } else {
               if (
-                number == 1 ||
-                number == currentPage ||
-                number == pageNumbers.length
+                number === 1 ||
+                number === currentPage ||
+                number === pageNumbers.length
               ) {
                 return (
                   <PaginationElement

@@ -16,7 +16,7 @@ export const Wrapper = styled.button`
     opacity: 0.8;
   }
   ${({ size }) =>
-    size == "small"
+    size === "small"
       ? `font-size: var(--fontSmall);
       width: 45px;
       min-width: 130px;
