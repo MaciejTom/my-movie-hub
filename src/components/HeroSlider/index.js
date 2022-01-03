@@ -16,7 +16,6 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
   const [windoWidth, setWindoWidth] = useState(window.innerWidth);
 
 
-
   useEffect(() => {
     const sliderTimer = setInterval(() => {
       if (index >= threeTopFilms.length - 1) {
@@ -37,10 +36,6 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
     
     return () => window.removeEventListener('resize', resizingWidth)
   }, [windoWidth]);
-
-
- 
-
 
 
   if (loading) {
@@ -74,7 +69,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
           >
             <Content>
               <Text>
-                <h1>{film.title}</h1>
+                {filmIndex == 0 ? <h1>{film.title}</h1> : <h2>{film.title}</h2>}
                 <p>{windoWidth < 700 ? film.overview.substring(0, 200) : film.overview}</p>
                 <Link to={`/film/${film.id}`}>
                   <Button size="small" text="Read more" />

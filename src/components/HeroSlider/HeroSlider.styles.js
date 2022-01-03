@@ -57,7 +57,7 @@ export const Text = styled.div`
     box-shadow: 0 0 2px #838383;
   }
 
-  h1 {
+  h2, h1 {
     font-size: var(--fontBig);
 
     @media (min-width: 720px) {
