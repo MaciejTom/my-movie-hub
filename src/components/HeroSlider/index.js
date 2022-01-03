@@ -17,17 +17,17 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
 
 
 
-  // useEffect(() => {
-  //   const sliderTimer = setInterval(() => {
-  //     if (index >= threeTopFilms.length - 1) {
-  //       setIndex(-1);
-  //     }
-  //     setIndex((prev) => prev + 1);
-  //   }, 8000);
+  useEffect(() => {
+    const sliderTimer = setInterval(() => {
+      if (index >= threeTopFilms.length - 1) {
+        setIndex(-1);
+      }
+      setIndex((prev) => prev + 1);
+    }, 8000);
 
     
-  //   return () => clearInterval(sliderTimer);
-  // }, [index, threeTopFilms.length]);
+    return () => clearInterval(sliderTimer);
+  }, [index, threeTopFilms.length]);
 
   useEffect(() => {
 
