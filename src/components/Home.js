@@ -41,6 +41,7 @@ const Home = () => {
       <Grid header={searchTerm ? "Search Result" : `Popular Movies`}>
         {movies.results.map((movie) => (
           <Thumb
+           
             key={movie.id}
             clickable
             title={movie.title}
@@ -50,6 +51,7 @@ const Home = () => {
                 : noImage
             }
             movieID={movie.id}
+            films
           />
         ))}
       </Grid>

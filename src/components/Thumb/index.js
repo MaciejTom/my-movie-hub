@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 //Components
 import { Image } from "./Thumb.styles";
 
-export const Thumb = ({ image, movieID, clickable, actor }) => {
+export const Thumb = ({ image, movieID, clickable, actor, films }) => {
+ 
   return (
     <div>
       {clickable ? (
@@ -15,7 +16,7 @@ export const Thumb = ({ image, movieID, clickable, actor }) => {
           <Image actor={actor} src={image} alt="movie-thumb" />
         </Link>
       ) : (
-        <Image actor={actor} src={image} alt="movie-thumb" />
+        <Image films={films} actor={actor} src={image} alt="movie-thumb" />
       )}
     </div>
   );
@@ -25,6 +26,7 @@ Thumb.propTypes = {
   movieID: PropTypes.number,
   clickable: PropTypes.bool,
   actor: PropTypes.bool,
+  films: PropTypes.bool,
 };
 
 export default Thumb;

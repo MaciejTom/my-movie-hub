@@ -50,6 +50,7 @@ export const Content = styled.div`
   .activeSlide {
     transform: translate(0);
     opacity: 1;
+    max-width: 100%;
   }
   .nextSlide {
     transform: translateX(100%);
@@ -75,4 +76,6 @@ export const Image = styled.img`
   display: block;
   border-radius: 20px;
   margin: 0 auto;
+  max-width: 100%;
+  object-fit: cover;
 `;

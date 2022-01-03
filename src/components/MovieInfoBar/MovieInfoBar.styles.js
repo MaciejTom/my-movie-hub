@@ -27,16 +27,14 @@ export const Column = styled.div`
   border-radius: 20px;
   margin: 0 20px;
   flex: 1;
-
-  &:first-child {
+  :first-child {
     margin-left: 0;
   }
-  &:last-child {
+  :last-child {
     margin-right: 0;
   }
+
   @media (max-width: 768px) {
-    .column {
-      margin: 20px 0;
-    }
+    margin: 20px 0;
   }
 `;

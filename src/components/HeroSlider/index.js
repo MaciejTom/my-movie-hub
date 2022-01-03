@@ -13,16 +13,35 @@ import Button from "../Button";
 
 export const HeroSlider = ({ threeTopFilms, loading }) => {
   const [index, setIndex] = useState(1);
+  const [windoWidth, setWindoWidth] = useState(window.innerWidth);
+
+
+
+  // useEffect(() => {
+  //   const sliderTimer = setInterval(() => {
+  //     if (index >= threeTopFilms.length - 1) {
+  //       setIndex(-1);
+  //     }
+  //     setIndex((prev) => prev + 1);
+  //   }, 8000);
+
+    
+  //   return () => clearInterval(sliderTimer);
+  // }, [index, threeTopFilms.length]);
 
   useEffect(() => {
-    const sliderTimer = setInterval(() => {
-      if (index >= threeTopFilms.length - 1) {
-        setIndex(-1);
-      }
-      setIndex((prev) => prev + 1);
-    }, 8000);
-    return () => clearInterval(sliderTimer);
-  }, [index, threeTopFilms.length]);
+
+    const resizingWidth = () => setWindoWidth(window.innerWidth)
+    
+    window.addEventListener('resize', resizingWidth)
+    
+    return () => window.removeEventListener('resize', resizingWidth)
+  }, [windoWidth]);
+
+
+ 
+
+
 
   if (loading) {
     return <div>loading...</div>;
@@ -30,6 +49,8 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
   return (
     <Section>
       {threeTopFilms.map((film, filmIndex) => {
+
+
         let position = "translateX(100%)";
         let opacity = "0";
         if (filmIndex === index) {
@@ -54,7 +75,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
             <Content>
               <Text>
                 <h1>{film.title}</h1>
-                <p>{film.overview}</p>
+                <p>{windoWidth < 700 ? film.overview.substring(0, 200) : film.overview}</p>
                 <Link to={`/film/${film.id}`}>
                   <Button size="small" text="Read more" />
                 </Link>

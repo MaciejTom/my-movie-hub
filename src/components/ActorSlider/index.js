@@ -62,7 +62,7 @@ const ActorSlider = ({ images }) => {
                   onClick={() => getImg(img)}
                 />
                 {img.media.title ? (
-                  <Link to={`/film/${img.media.id}`}>{img.media.title}</Link>
+                  <Link to={`/film/${img.media.id}`}>{img.media.title.length > 38 ? img.media.title.substring(0,38) + "..." : img.media.title}</Link>
                 ) : (
                   <span>I'm sorry... we don't have this film</span>
                 )}

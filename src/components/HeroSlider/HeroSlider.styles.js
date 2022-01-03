@@ -53,6 +53,10 @@ export const Text = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
+  button {
+    box-shadow: 0 0 2px #838383;
+  }
+
   h1 {
     font-size: var(--fontBig);
 
