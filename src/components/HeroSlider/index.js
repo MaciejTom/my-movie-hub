@@ -48,9 +48,11 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
 
         let position = "translateX(100%)";
         let opacity = "0";
+        let zIndex = '0';
         if (filmIndex === index) {
           position = "translateX(0)";
           opacity = "1";
+          zIndex = '99';
         }
         if (
           filmIndex === index - 1 ||
@@ -66,6 +68,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
             image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${film.backdrop_path}`}
             position={position}
             opacity={opacity}
+            zIndex={zIndex}
           >
             <Content>
               <Text>

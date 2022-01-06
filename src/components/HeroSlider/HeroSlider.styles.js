@@ -17,21 +17,11 @@ export const Wrapper = styled.div`
   background-position-y: 30%;
   background-position-x: center;
   height: 600px;
-  animation: animateHeroImage 1s;
-  transform: ${({ position }) => position};
-  opacity: ${({ opacity }) => opacity};
+  transform: ${({ position }) => position};  
   width: 100%;
+  z-index: ${({ zIndex }) => zIndex};
   transition: 1s ease;
   position: absolute;
-
-  @keyframes animateHeroImage {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 `;
 
 export const Content = styled.div`
