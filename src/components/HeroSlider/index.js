@@ -22,7 +22,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
         setIndex(-1);
       }
       setIndex((prev) => prev + 1);
-    }, 8000);
+    }, 4500);
 
     
     return () => clearInterval(sliderTimer);
