@@ -43,6 +43,10 @@ export const Text = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
+  a {
+    text-decoration: none;
+  }
+
   button {
     box-shadow: 0 0 2px #838383;
   }
