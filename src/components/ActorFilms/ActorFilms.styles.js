@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export const Content = styled.div`
+export const Content = styled.section`
   h2 {
     font-size: var(--fontBigger);
   }
-  padding: 0 20px;
+  padding: 0 1.3rem;
   max-width: var(--maxWidth);
   margin: 0 auto;
 `;
 export const Film = styled.div`
-  padding: 20px;
+  padding: 1.3rem;
   a {
     display: flex;
     text-decoration: none;
@@ -35,6 +35,6 @@ export const Text = styled.div`
   padding: 30px;
   h3 {
     font-size: var(--fontBig);
-    margin: 0 0 20px 0;
+    margin: 0 0 1.3rem 0;
   }
 `;

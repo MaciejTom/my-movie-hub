@@ -9,11 +9,9 @@ export const Wrapper = styled.div`
    
     content: '.';
     display: inline-block;
-
     position: absolute;
     bottom: -0.5em;
     left: 0;
-
     text-align: center;
     width: 100%;
 

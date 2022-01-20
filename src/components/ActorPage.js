@@ -10,6 +10,7 @@ import ActorInfo from "./ActorInfo";
 import Spinner from "./Spinner";
 import ActorSlider from "./ActorSlider";
 import ActorFilms from "./ActorFilms";
+import Error from "./Error";
 
 export const ActorPage = () => {
   const { actorId } = useParams();
@@ -17,7 +18,7 @@ export const ActorPage = () => {
   const { actor, error, loading } = useActorFetch(actorId);
 
   if (loading) return <Spinner />;
-  if (error) return <div>Something went wrong</div>;
+  if (error) return <Error/>;
 
   return (
     <div>

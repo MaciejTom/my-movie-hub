@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const Section = styled.section`
   height: 600px;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 20px;
+  padding: 1.3rem;
   max-width: var(--maxWidth);
   margin: 0 auto;
   height: 100%;
@@ -36,7 +36,7 @@ export const Content = styled.div`
 export const Text = styled.div`
   z-index: 100;
   max-width: 700px;
-  margin-right: 20px;
+  margin-right: 1.3rem;
   min-height: 100px;
   color: var(--white);
   display: flex;

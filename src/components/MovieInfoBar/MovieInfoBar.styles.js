@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   display: flex;
   align-items: center;
   min-height: 100px;
   background: var(--darkGrey);
-  padding: 0 20px;
+  padding: 0 1.3rem;
 `;
 
 export const Content = styled.div`
@@ -25,7 +25,7 @@ export const Column = styled.div`
   justify-content: center;
   background: var(--medGrey);
   border-radius: 20px;
-  margin: 0 20px;
+  margin: 0 1.3rem;
   flex: 1;
   :first-child {
     margin-left: 0;
@@ -35,6 +35,6 @@ export const Column = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 20px 0;
+    margin: 1.3rem 0;
   }
 `;

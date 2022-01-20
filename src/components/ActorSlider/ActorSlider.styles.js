@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.3rem;
 
   h2 {
     font-size: var(--fontBigger);
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
     button {
       display: inline-block;
-      margin: 20px;
+      margin: 1.3rem;
     }
   }
 `;

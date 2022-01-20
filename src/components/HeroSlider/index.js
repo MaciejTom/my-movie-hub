@@ -72,7 +72,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
           >
             <Content>
               <Text>
-                {filmIndex == 0 ? <h1>{film.title}</h1> : <h2>{film.title}</h2>}
+                {filmIndex === 0 ? <h1>{film.title}</h1> : <h2>{film.title}</h2>}
                 <p>{windoWidth < 700 ? film.overview.substring(0, 200) : film.overview}...</p>
                 <Link to={`/film/${film.id}`}>
                   <Button size="small" text="Read more" />

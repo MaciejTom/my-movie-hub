@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   background: var(--darkGrey);
   color: var(--white);
-  padding: 20px;
-  margin-top: 40px;
+  padding: 1.3rem;
+  margin-top: 2.5rem;
   position: relative;
   left: 0;
   bottom: 0;

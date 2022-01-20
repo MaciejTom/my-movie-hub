@@ -13,10 +13,10 @@ export const Wrapper = styled.div`
   }
 
   h3 {
-    margin: 10px 0 0 0;
+    margin: 0.6rem 0 0 0;
   }
   p {
-    margin: 5px 0;
+    margin: 0.3rem 0;
   }
 `;
 

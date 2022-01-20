@@ -15,8 +15,8 @@ import ContainerContent from "./components/ContainerContent";
 
 const App = () => (
   <Router>
+    <Header />
     <ContainerContent>
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/film/:movieId" element={<Movie />} />

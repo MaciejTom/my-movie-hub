@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   background: var(--darkGrey);
-  padding: 0 20px;
+  padding: 0 1.3rem;
 `;
 
 export const Content = styled.div`
@@ -10,15 +10,15 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: var(--maxWidth);
-  padding: 20px 0;
+  padding: 1.3rem 0;
   margin: 0 auto;
 `;
 
 export const LogoImg = styled.img`
-  width: 120px;
+  width: 100px;
 
   @media (max-width: 500px) {
-    width: 80px;
+    width: 70px;
   }
 `;
 

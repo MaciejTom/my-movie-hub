@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   background: ${({ backdrop }) =>
     backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : "white"};
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
+  padding: 2.5rem 1.3rem;
   animation: animateMovieInfo 1s;
 
   @keyframes animateMovieInfo {
@@ -38,7 +38,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   width: 100%;
-  padding: 20px 40px;
+  padding: 1.3rem 2.5rem;
   color: var(--white);
   overflow: hidden;
 
@@ -61,7 +61,7 @@ export const Text = styled.div`
   }
 
   .director {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 2.5rem;
 
     p {
       margin: 0;

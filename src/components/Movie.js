@@ -10,6 +10,7 @@ import Movieinfo from "./Movieinfo";
 import MovieInfoBar from "./MovieInfoBar";
 import Actor from "./Actor";
 import Trailer from "./Trailer";
+import Error from "./Error";
 //Images
 import noImage from "../images/no-image.jpg";
 //Hook
@@ -23,7 +24,7 @@ const Movie = () => {
   const { movie, error, loading } = useMovieFetch(movieId);
 
   if (loading) return <Spinner />;
-  if (error) return <div>Something went wrong...</div>;
+  if (error) return <Error/>;
 
   return (
     <>

@@ -7,6 +7,7 @@ import Thumb from "./Thumb";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
+import Error from "./Error";
 //Hooks
 import useHomeFetch from "../hooks/useHomeFetch";
 //Images
@@ -29,7 +30,7 @@ const Home = () => {
   const threeTopFilms = movies.results.slice(0, 3);
 
   if (error) {
-    return <div>Something went wrong...</div>;
+    return <Error/>;
   }
 
   return (

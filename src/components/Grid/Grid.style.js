@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.3rem;
   h2 {
     font-size: var(--fontBigger);
     color: var(--medGrey);
