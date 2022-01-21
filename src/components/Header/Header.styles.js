@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.header`
   background: var(--darkGrey);
-  padding: 0 1.3rem;
+  padding: 0 1.3em;
 `;
 
 export const Content = styled.div`
@@ -10,7 +10,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: var(--maxWidth);
-  padding: 1.3rem 0;
+  padding: 1.3em 0;
   margin: 0 auto;
 `;
 

@@ -1,11 +1,13 @@
 import React from "react";
 
+
 //Proptypes
 import PropTypes from "prop-types";
 //Styles
-import { List } from "./Pagination.style";
+import { List, LeftBtn, RightBtn } from "./Pagination.style";
 //Components
 import PaginationElement from "../PaginationElement";
+
 
 export const Pagination = ({
   totalFilms,
@@ -29,8 +31,9 @@ export const Pagination = ({
   };
 
   return (
+    <>
     <List>
-      <button onClick={() => changePagination("-")}>{"<"}</button>
+      <LeftBtn size="30px" color="#1c1c1c" onClick={() => changePagination("-")} />
       {pageNumbers.length < 5
         ? pageNumbers.map((number, index) => (
             <PaginationElement
@@ -89,8 +92,10 @@ export const Pagination = ({
             }
           })}
 
-      <button onClick={() => changePagination("+")}>{">"}</button>
+      <RightBtn size="30px" color="#1c1c1c" onClick={() => changePagination("+")}/>
+      
     </List>
+    </>
   );
 };
 

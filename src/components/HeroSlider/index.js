@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 //Proptypes
 import PropTypes from "prop-types";
 //Routing
@@ -10,9 +9,10 @@ import { Wrapper, Content, Section, Text } from "./HeroSlider.styles";
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
 //Components
 import Button from "../Button";
+import DotsSlider from "../DotsSlider";
 
 export const HeroSlider = ({ threeTopFilms, loading }) => {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
   const [windoWidth, setWindoWidth] = useState(window.innerWidth);
 
 
@@ -22,7 +22,7 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
         setIndex(-1);
       }
       setIndex((prev) => prev + 1);
-    }, 4500);
+    }, 7000);
 
     
     return () => clearInterval(sliderTimer);
@@ -44,7 +44,6 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
   return (
     <Section>
       {threeTopFilms.map((film, filmIndex) => {
-
 
         let position = "translateX(100%)";
         let opacity = "0";
@@ -78,13 +77,17 @@ export const HeroSlider = ({ threeTopFilms, loading }) => {
                   <Button size="small" text="Read more" />
                 </Link>
               </Text>
+              
             </Content>
           </Wrapper>
         );
       })}
+      
+      <DotsSlider setIndex={setIndex} length={threeTopFilms.length} index={index}/>
     </Section>
   );
 };
+
 
 HeroSlider.propTypes = {
   threeTopFilms: PropTypes.array,

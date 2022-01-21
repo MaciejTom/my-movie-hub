@@ -7,7 +7,7 @@ export const Wrapper = styled.section`
     backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : "#000"};
   background-size: cover;
   background-position: center;
-  padding: 2.5rem 1.3rem;
+  padding: 2.5em 1.3em;
   animation: animateMovieInfo 1s;
 
   @keyframes animateMovieInfo {
@@ -35,7 +35,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   width: 100%;
-  padding: 1.3rem 2.5rem;
+  padding: 1.3em 2.5em;
   color: var(--white);
   overflow: hidden;
 
@@ -68,7 +68,7 @@ export const Rating = styled.div`
 `;
 
 export const Directors = styled.div`
-  margin: 0 0 0 2.5rem;
+  margin: 0 0 0 2.5em;
 
   p {
     margin: 0;

@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import {BsFillArrowRightCircleFill} from "react-icons/bs"
+import {BsFillArrowLeftCircleFill} from "react-icons/bs"
 
 export const Wrapper = styled.section`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 0 1.3rem;
+  padding: 0 1.3em;
 
   h2 {
     font-size: var(--fontBigger);
@@ -20,7 +22,7 @@ export const Wrapper = styled.section`
 
     button {
       display: inline-block;
-      margin: 1.3rem;
+      margin: 1.3em;
     }
   }
 `;
@@ -33,6 +35,7 @@ export const Content = styled.div`
   position: relative;
   display: flex;
   overflow: hidden;
+
   @media (max-width: 500px) {
     height: 350px;
   }
@@ -65,3 +68,11 @@ export const Content = styled.div`
 `;
 
 export const Film = styled.div``;
+export const RightBtn = styled(BsFillArrowRightCircleFill)``
+
+export const LeftBtn = styled(BsFillArrowLeftCircleFill)``
+export const Buttons = styled.div`
+display: flex;
+justify-content: center;
+padding: 1em;
+column-gap: 1em;`

@@ -32,7 +32,7 @@ export const StyledModal = styled(Modal)`
     max-width: 100%;
     height: auto;
     display: block;
-    padding: 1.3rem;
+    padding: 1.3em;
     margin: 0 auto;
   }
 `;

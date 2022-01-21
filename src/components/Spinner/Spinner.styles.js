@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Spinner = styled.div`
+export const SpinnerElement = styled.div`
     border: 5px solid var(--lightGrey);
     border-top: 5px solid var(--medGrey);
     border-radius: 50%;
     width: 100px;
     height: 100px;
     animation: spin 0.8s linear infinite;
-    margin: 7.5rem auto;
+    margin: 0 auto;
     
 
     @keyframes spin {
@@ -19,3 +19,5 @@ export const Spinner = styled.div`
         }
     }
 `
+export const SpinnerContainer = styled.div`
+padding: 7.5em 0`

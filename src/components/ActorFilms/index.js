@@ -30,7 +30,7 @@ export const ActorFilms = ({ films }) => {
         return (
           <Film key={film.id}>
             <Link to={`/film/${film.id}`}>
-              <ImageDiv>
+              <ImageDiv img={film.backdrop_path}>
                 {film.backdrop_path && (
                   <img
                     alt="photo-from-the-film"

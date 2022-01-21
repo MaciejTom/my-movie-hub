@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 //Proptypes
 import PropTypes from "prop-types";
 //Styles
-import { Wrapper, Content } from "./Trailer.styles";
-//Components
-import Button from "../Button";
+import { Wrapper, Content, LeftBtn, RightBtn, Buttons } from "./Trailer.styles";
+
 
 function Trailer({ trailers }) {
   const [index, setIndex] = useState(0);
@@ -53,18 +52,11 @@ function Trailer({ trailers }) {
         })}
       </Content>
       {trailers.length > 1 && (
-        <div className="buttons">
-          <Button
-            text="Prev"
-            size="small"
-            callback={() => setIndex(index - 1)}
-          />
-          <Button
-            text="Next"
-            size="small"
-            callback={() => setIndex(index + 1)}
-          />
-        </div>
+        <Buttons>
+          <LeftBtn size="30px" onClick={() => setIndex(index - 1)}/>
+          <RightBtn size="30px" onClick={() => setIndex(index + 1)}/>
+         
+        </Buttons>
       )}
     </Wrapper>
   );

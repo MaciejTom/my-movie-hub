@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import {BsFillArrowRightCircleFill} from "react-icons/bs"
+import {BsFillArrowLeftCircleFill} from "react-icons/bs"
 
 export const Wrapper = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 1.3rem;
+  padding: 1.3em;
 
   h2 {
     font-size: var(--fontBigger);
@@ -15,12 +17,12 @@ export const Wrapper = styled.div`
 
     button {
       display: inline-block;
-      margin: 1.3rem;
+      margin: 1.3em;
     }
   }
 `;
 export const Content = styled.div`
-  margin: 1rem auto 0;
+  margin: 1em auto 0;
 
   height: 460px;
   max-width: 800px;
@@ -79,3 +81,13 @@ export const Image = styled.img`
   max-width: 100%;
   object-fit: cover;
 `;
+
+export const RightBtn = styled(BsFillArrowRightCircleFill)``
+
+export const LeftBtn = styled(BsFillArrowLeftCircleFill)``
+export const Buttons = styled.div`
+display: flex;
+justify-content: center;
+padding: 1em;
+column-gap: 1em;
+`

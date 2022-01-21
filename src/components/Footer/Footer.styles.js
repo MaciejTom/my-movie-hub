@@ -4,7 +4,7 @@ export const Wrapper = styled.footer`
   background: var(--darkGrey);
   color: var(--white);
   padding: 1.3rem;
-  margin-top: 2.5rem;
+  margin-top: 2.5em;
   position: relative;
   left: 0;
   bottom: 0;

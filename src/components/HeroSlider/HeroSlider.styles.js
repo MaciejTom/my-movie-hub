@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   background-position-y: 30%;
   background-position-x: center;
   height: 600px;
-  transform: ${({ position }) => position};  
+  transform: ${({ position }) => position};
   width: 100%;
   z-index: ${({ zIndex }) => zIndex};
   transition: 1s ease;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 1.3rem;
+  padding: 1.3em;
   max-width: var(--maxWidth);
   margin: 0 auto;
   height: 100%;
@@ -36,7 +36,7 @@ export const Content = styled.div`
 export const Text = styled.div`
   z-index: 100;
   max-width: 700px;
-  margin-right: 1.3rem;
+  margin-right: 1.3em;
   min-height: 100px;
   color: var(--white);
   display: flex;
@@ -51,7 +51,8 @@ export const Text = styled.div`
     box-shadow: 0 0 2px #838383;
   }
 
-  h2, h1 {
+  h2,
+  h1 {
     font-size: var(--fontBig);
 
     @media (min-width: 720px) {

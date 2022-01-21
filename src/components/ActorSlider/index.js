@@ -6,7 +6,14 @@ import PropTypes from "prop-types";
 import Button from "../Button";
 import { StyledModal } from "../Modal/Modal.styles";
 //Styles
-import { Wrapper, Content, Image } from "./ActorSlider.styles";
+import {
+  Wrapper,
+  Content,
+  Image,
+  LeftBtn,
+  RightBtn,
+  Buttons,
+} from "./ActorSlider.styles";
 //Routing
 import { Link } from "react-router-dom";
 //Config
@@ -62,7 +69,11 @@ const ActorSlider = ({ images }) => {
                   onClick={() => getImg(img)}
                 />
                 {img.media.title ? (
-                  <Link to={`/film/${img.media.id}`}>{img.media.title.length > 38 ? img.media.title.substring(0,38) + "..." : img.media.title}</Link>
+                  <Link to={`/film/${img.media.id}`}>
+                    {img.media.title.length > 38
+                      ? img.media.title.substring(0, 38) + "..."
+                      : img.media.title}
+                  </Link>
                 ) : (
                   <span>I'm sorry... we don't have this film</span>
                 )}
@@ -71,18 +82,10 @@ const ActorSlider = ({ images }) => {
           })}
         </Content>
         {images.length > 1 && (
-          <div className="buttons">
-            <Button
-              text="Prev"
-              size="small"
-              callback={() => setIndex(index - 1)}
-            />
-            <Button
-              text="Next"
-              size="small"
-              callback={() => setIndex(index + 1)}
-            />
-          </div>
+          <Buttons>
+            <LeftBtn size="30px" onClick={() => setIndex(index - 1)} />
+            <RightBtn size="30px" onClick={() => setIndex(index + 1)} />
+          </Buttons>
         )}
       </Wrapper>
     </>

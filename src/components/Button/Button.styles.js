@@ -7,7 +7,7 @@ export const Wrapper = styled.button`
   color: var(--white);
   border: 0;
   font-size: var(--fontBig);
-  margin: 1.3rem auto;
+  margin: 1.3em auto;
   transition: all 0.3s;
   outline: none;
   cursor: pointer;

@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   align-items: center;
   min-height: 100px;
   background: var(--darkGrey);
-  padding: 0 1.3rem;
+  padding: 0 1.3em;
 `;
 
 export const Content = styled.div`
@@ -25,7 +25,7 @@ export const Column = styled.div`
   justify-content: center;
   background: var(--medGrey);
   border-radius: 20px;
-  margin: 0 1.3rem;
+  margin: 0 1.3em;
   flex: 1;
   :first-child {
     margin-left: 0;
@@ -35,6 +35,6 @@ export const Column = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 1.3rem 0;
+    margin: 1.3em 0;
   }
 `;

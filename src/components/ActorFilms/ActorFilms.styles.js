@@ -4,12 +4,12 @@ export const Content = styled.section`
   h2 {
     font-size: var(--fontBigger);
   }
-  padding: 0 1.3rem;
+  padding: 0 1.3em;
   max-width: var(--maxWidth);
   margin: 0 auto;
 `;
 export const Film = styled.div`
-  padding: 1.3rem;
+  padding: 1.3em 0;
   a {
     display: flex;
     text-decoration: none;
@@ -24,7 +24,14 @@ export const Film = styled.div`
 `;
 
 export const ImageDiv = styled.div`
-  max-width: 440px;
+  max-width: 410px;
+  align-self: center;
+
+  ${({ img }) => img && "flex: 1;"}
+  @media (max-width: 750px) {
+    max-width: none;
+  }
+
   img {
     width: 100%;
     border-radius: 20px;
@@ -32,9 +39,10 @@ export const ImageDiv = styled.div`
   }
 `;
 export const Text = styled.div`
-  padding: 30px;
+  padding: 1.8em;
+  flex: 1;
   h3 {
     font-size: var(--fontBig);
-    margin: 0 0 1.3rem 0;
+    margin: 0 0 1.3em 0;
   }
 `;

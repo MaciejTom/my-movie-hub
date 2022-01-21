@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   align-items: center;
   height: 100px;
   background: var(--darkGrey);
-  padding: 0 1.3rem;
+  padding: 0 1.3em;
 `;
 export const Content = styled.div`
   position: relative;
@@ -28,12 +28,11 @@ export const Content = styled.div`
     font-size: var(--fontBig);
     position: absolute;
     left: 0;
-    margin: 0.5rem 0;
-    padding: 0 0 0 60px;
+    margin: 0.5em 0;
+    padding: 0 0 0 3.75em;
     border: 0;
     width: 95%;
     background: transparent;
-    height: 40px;
     color: var(--white);
     :focus {
       outline: none;

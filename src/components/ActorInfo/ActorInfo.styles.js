@@ -7,7 +7,7 @@ export const Wrapper = styled.section`
     backdrop ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop})` : "white"};
   background-size: cover;
   background-position: center;
-  padding: 2.5rem 1.3rem;
+  padding: 2.5em 1.3em;
   animation: animateMovieInfo 1s;
 
   @keyframes animateMovieInfo {
@@ -38,7 +38,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   width: 100%;
-  padding: 1.3rem 2.5rem;
+  padding: 1.3em 2.5em 3em;
   color: var(--white);
   overflow: hidden;
 
@@ -61,7 +61,7 @@ export const Text = styled.div`
   }
 
   .director {
-    margin: 0 0 0 2.5rem;
+    margin: 0 0 0 2.5em;
 
     p {
       margin: 0;
@@ -79,7 +79,7 @@ export const Text = styled.div`
     text-transform: capitalize;
     font-size: 1rem;
     cursor: pointer;
-    padding-left: 0.25rem;
+    padding-left: 0.25em;
     color: #49a6e9;
   }
 `;
